@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <WebView
+        <com.shahriar.xensight.simplebrowser.observable_webview
             android:id="@+id/webView"
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -20,7 +20,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-        </WebView>
+        </com.shahriar.xensight.simplebrowser.observable_webview>
 
         <EditText
             android:id="@+id/urledit"

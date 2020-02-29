@@ -1,10 +1,14 @@
 package com.shahriar.xensight.simplebrowser;
 
+import android.content.Context;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,19 +21,22 @@ import android.view.View;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.AbsListView;
 import android.widget.EditText;
+import android.widget.ListView;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
+
 public class normal extends Fragment {
 
     public normal() {
         // Required empty public constructor
     }
 
-    public WebView webview;
+    public observable_webview webview;
     public EditText urledit;
 
     @Override
@@ -87,6 +94,19 @@ public class normal extends Fragment {
             }
         });
 
+        webview.setOnScrollChangedCallback(new observable_webview.OnScrollChangedCallback(){
+            public void onScroll(int l, int t, int oldl, int oldt){
+                if(t> oldt){
+                    //Do stuff
+                    urledit.setText(1);
+                    //Do stuff
+                }
+                else if(t< oldt){
+                    urledit.setText(0);
+                }
+
+            }
+        });
     }
 
     public void loadurl(String url) {
