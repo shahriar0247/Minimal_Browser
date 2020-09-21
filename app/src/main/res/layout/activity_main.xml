@@ -7,38 +7,141 @@
     android:backgroundTintMode="src_in"
     tools:context=".MainActivity">
 
-    <WebView
-        android:id="@+id/webView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/urledit"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    </WebView>
 
-    <EditText
-        android:id="@+id/urledit"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:layout_weight="1"
-        android:background="@drawable/rounded_corners"
-        android:ems="11"
-        android:hint="Enter a url or search in google"
-        android:inputType="textUri|textEmailAddress"
-        android:padding="10dp"
-        android:selectAllOnFocus="true"
-        android:textColor="#000000"
-        android:textColorHighlight="#FF9797"
-        android:textColorHint="#3D3D3D"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/webView" />
+        <com.shahriar.xensight.simplebrowser.observable_webview
+            android:id="@+id/webView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteX="411dp">
+
+        </com.shahriar.xensight.simplebrowser.observable_webview>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/ll"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_alignParentBottom="true"
+            android:elevation="12dp"
+            android:background="@drawable/rounded_corners2"
+
+
+
+            >
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="0dp"
+
+
+
+                android:background="@drawable/urlbg"
+
+                android:progressDrawable="@drawable/progress_bar" />
+
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal"
+              android:layout_marginTop="12dp"
+              android:layout_marginLeft="16dp"
+              android:layout_marginRight="16dp"
+              android:layout_marginBottom="8dp"
+              android:padding="3dp"
+              >
+<androidx.appcompat.widget.AppCompatImageView
+    android:layout_width="40dp"
+    android:layout_height="40dp"
+
+    android:layout_marginRight="8dp"
+
+
+    android:padding="6dp"
+    android:paddingLeft="1dp"
+    android:paddingRight="1dp"
+    android:src="@drawable/back"
+    android:background="@drawable/rounded_corners3"
+    android:id="@+id/back"
+    >
+
+</androidx.appcompat.widget.AppCompatImageView>
+              <androidx.appcompat.widget.AppCompatImageView
+                  android:layout_width="40dp"
+                  android:layout_height="40dp"
+                  android:layout_marginLeft="8dp"
+                  android:layout_marginRight="8dp"
+
+                  android:padding="6dp"
+                  android:paddingLeft="13dp"
+                  android:paddingRight="13dp"
+                  android:src="@drawable/forward"
+                  android:background="@drawable/rounded_corners3"
+                  android:id="@+id/forward"
+                  >
+
+              </androidx.appcompat.widget.AppCompatImageView>
+              <ImageView
+                  android:layout_width="42dp"
+                  android:layout_height="42dp"
+                  android:id="@+id/reload"
+                  android:src="@drawable/reload"
+                  android:background="@drawable/rounded_corners"
+                  android:padding="6dp"
+
+
+                  ></ImageView>
+          </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:elevation="14dp"
+                >
+
+                <EditText
+                    android:id="@+id/urledit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+
+                    android:layout_weight="2"
+                    android:background="@drawable/rounded_corners"
+                    android:clipToPadding="false"
+                    android:elevation="20dp"
+                    android:ems="11"
+                    android:hint="Enter a url or search in google"
+                    android:inputType="textUri|textEmailAddress"
+                    android:padding="10dp"
+                    android:selectAllOnFocus="true"
+                    android:textColor="#000000"
+                    android:textColorHighlight="#FF9797"
+
+
+                    android:textColorHint="#3D3D3D"
+                    android:textSize="18sp"
+                    tools:layout_editor_absoluteX="169dp"
+                    tools:layout_editor_absoluteY="680dp"></EditText>
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
